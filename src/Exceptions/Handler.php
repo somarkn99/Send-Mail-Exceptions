@@ -4,9 +4,9 @@ namespace somarkn99\SendMailExceptions\Exceptions;
 
 use App\Mail\ExceptionMail;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Throwable;
 use Log;
 use Mail;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -14,7 +14,6 @@ class Handler extends ExceptionHandler
      * A list of the exception types that are not reported.
      *
      * @var array>
-
      */
     protected $dontReport = [
 
@@ -24,7 +23,6 @@ class Handler extends ExceptionHandler
      * A list of the inputs that are never flashed for validation exceptions.
      *
      * @var array
-
      */
     protected $dontFlash = [
         'current_password',
@@ -51,8 +49,7 @@ class Handler extends ExceptionHandler
      */
     public function sendEmail(Throwable $exception)
     {
-       try {
-
+        try {
             $exceptionData['message'] = $exception->getMessage();
             $exceptionData['file'] = $exception->getFile();
             $exceptionData['line'] = $exception->getLine();
@@ -65,7 +62,6 @@ class Handler extends ExceptionHandler
             $email = env('SUPPORT_EMAIL');
 
             Mail::to($email)->send(new ExceptionMail($exceptionData));
-
         } catch (Throwable $exception) {
             Log::error($exception);
         }
