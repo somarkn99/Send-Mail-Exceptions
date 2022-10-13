@@ -1,9 +1,9 @@
 {
-    "name": "syrian-open-source/send-mail-exceptions",
+    "name": "somarkn99/send-mail-exceptions",
     "description": "This package sends an email for technical support in the event of any error on the site including a set of error information.",
     "type": "library",
     "license": "MIT",
-    "keywords": ["framework", "laravel","Error"],
+    "keywords": ["framework", "laravel","Error","syrian","open-source"],
     "autoload": {
         "psr-4": {
             "Somarkn99\\SendMailExceptions\\": "src/"

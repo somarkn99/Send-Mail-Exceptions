@@ -9,7 +9,7 @@ Usage
 1. Install package using composer
 
 ```php
-composer require syrian-open-source/send-mail-exceptions
+composer require somarkn99/send-mail-exceptions
 ```
 
 2. Set your support email
